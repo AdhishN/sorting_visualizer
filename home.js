@@ -9,9 +9,11 @@ const quickSortBtn = document.querySelector('#quick-sort-btn');
 let isSorting = false; // for STOP button 
 
 const generateArray = () => {
+    // Get the array size from the input field
+    const arraySize = Number(document.getElementById('array-size-btn').value);
 	// Generate an array of random numbers between 1 and 100
-	const array = Array.from({ length: 150 }, () => Math.floor(Math.random() * 100) + 1);
-	// Clear the array container
+	const array = Array.from({ length: arraySize}, () => Math.floor(Math.random() * 100) + 1);
+	// Clear the previous array
 	arrayContainer.innerHTML = '';
 	// Add array elements to the container
     array.forEach((value) => {
@@ -25,28 +27,9 @@ const generateArray = () => {
 generateArrayBtn.addEventListener('click', generateArray);
 
 bubbleSortBtn.addEventListener('click', async () => {
-    isSorting=!isSorting; // can continue even after stopped
+    isSorting=true; // can continue even after stopped
     const arrayElements = document.querySelectorAll('.array-element');
-    const n = arrayElements.length;
-  
-    // Bubble sort algorithm
-    for (let i = 0; i < n - 1 && isSorting; i++) {
-      for (let j = 0; j < n - i - 1 && isSorting; j++) {
-        const currentElement = arrayElements[j];
-        const nextElement = arrayElements[j + 1];
-        currentElement.classList.add('active');
-        nextElement.classList.add('active');
-        await new Promise((resolve) => setTimeout(resolve, 50));
-        const currentValue = parseInt(currentElement.style.height);
-        const nextValue = parseInt(nextElement.style.height);
-        if (currentValue > nextValue) {
-          currentElement.style.height = `${nextValue}px`;
-          nextElement.style.height = `${currentValue}px`;
-        }
-        currentElement.classList.remove('active');
-        nextElement.classList.remove('active');
-      }
-    }
+    bubbleSort(arrayElements); //calls the bubbleSort function in the sorts folder
   });
 
 selectionSortBtn.addEventListener('click', () => {
