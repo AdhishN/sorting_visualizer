@@ -1,28 +1,63 @@
-const arrayContainer = document.getElementById("array-container");
-const generateArrayButton = document.getElementById("generate-array");
+const arrayContainer = document.querySelector('.array-container');
+const generateArrayBtn = document.querySelector('#generate-array-btn');
+const bubbleSortBtn = document.querySelector('#bubble-sort-btn');
+const selectionSortBtn = document.querySelector('#selection-sort-btn');
+const insertionSortBtn = document.querySelector('#insertion-sort-btn');
+const mergeSortBtn = document.querySelector('#merge-sort-btn');
+const quickSortBtn = document.querySelector('#quick-sort-btn');
 
-function generateRandomArray()
-{
-    const array = [];
-    for (let i = 0; i< 20; i++)
-    {
-        array.push(Math.floor(Math.random()*100)+1);
+const generateArray = () => {
+	// Generate an array of random numbers between 1 and 100
+	const array = Array.from({ length: 150 }, () => Math.floor(Math.random() * 100) + 1);
+	// Clear the array container
+	arrayContainer.innerHTML = '';
+	// Add array elements to the container
+    array.forEach((value) => {
+        const arrayElement = document.createElement('div');
+        arrayElement.classList.add('array-element');
+        arrayElement.style.height = `${value * 4}px`;
+        arrayContainer.appendChild(arrayElement);
+      });
+};
+
+generateArrayBtn.addEventListener('click', generateArray);
+
+bubbleSortBtn.addEventListener('click', async () => {
+    const arrayElements = document.querySelectorAll('.array-element');
+    const n = arrayElements.length;
+  
+    // Bubble sort algorithm
+    for (let i = 0; i < n - 1; i++) {
+      for (let j = 0; j < n - i - 1; j++) {
+        const currentElement = arrayElements[j];
+        const nextElement = arrayElements[j + 1];
+        currentElement.classList.add('active');
+        nextElement.classList.add('active');
+        await new Promise((resolve) => setTimeout(resolve, 50));
+        const currentValue = parseInt(currentElement.style.height);
+        const nextValue = parseInt(nextElement.style.height);
+        if (currentValue > nextValue) {
+          currentElement.style.height = `${nextValue}px`;
+          nextElement.style.height = `${currentValue}px`;
+        }
+        currentElement.classList.remove('active');
+        nextElement.classList.remove('active');
+      }
     }
-    arrayContainer.innerHTML = array.join(" ");
+  });
 
-    for (let i =0; i<array.length;i++)
-    {
-        const bar= document.createElement('div');
-        bar.classList.add('bar');
-        bar.style.height= array[i] * 3+ 'px';
-        arrayContainer.appendChild(bar);
-    }
-}
+selectionSortBtn.addEventListener('click', () => {
+	// TODO 
+});
 
-function sortArray()
-{
-    //TODO Implement the sorting algorithm
-    console.log('Sorting Array...')
-}
+insertionSortBtn.addEventListener('click', () => {
+	// TODO 
+});
 
-generateArrayButton.addEventListener("click", generateRandomArray);
+mergeSortBtn.addEventListener('click', () => {
+	// TODO
+});
+
+quickSortBtn.addEventListener('click', () => {
+	// TODO
+});
