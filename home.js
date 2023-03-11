@@ -6,6 +6,8 @@ const insertionSortBtn = document.querySelector('#insertion-sort-btn');
 const mergeSortBtn = document.querySelector('#merge-sort-btn');
 const quickSortBtn = document.querySelector('#quick-sort-btn');
 
+let isSorting = false; // for STOP button 
+
 const generateArray = () => {
 	// Generate an array of random numbers between 1 and 100
 	const array = Array.from({ length: 150 }, () => Math.floor(Math.random() * 100) + 1);
@@ -23,12 +25,13 @@ const generateArray = () => {
 generateArrayBtn.addEventListener('click', generateArray);
 
 bubbleSortBtn.addEventListener('click', async () => {
+    isSorting=!isSorting; // can continue even after stopped
     const arrayElements = document.querySelectorAll('.array-element');
     const n = arrayElements.length;
   
     // Bubble sort algorithm
-    for (let i = 0; i < n - 1; i++) {
-      for (let j = 0; j < n - i - 1; j++) {
+    for (let i = 0; i < n - 1 && isSorting; i++) {
+      for (let j = 0; j < n - i - 1 && isSorting; j++) {
         const currentElement = arrayElements[j];
         const nextElement = arrayElements[j + 1];
         currentElement.classList.add('active');
@@ -61,3 +64,8 @@ mergeSortBtn.addEventListener('click', () => {
 quickSortBtn.addEventListener('click', () => {
 	// TODO
 });
+
+const stopSortingBtn = document.getElementById('stop-button');
+stopSortingBtn.addEventListener('click', ()=>{
+    isSorting = false; // stops the sorting on click of stop
+})
