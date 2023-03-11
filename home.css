@@ -12,7 +12,7 @@
 
 /* Style each individual array element */
 .array-element {
-  color: black;
+  color: rgb(0, 0, 0);
   padding: 1px;
   margin: 2px;
   flex: 1;
