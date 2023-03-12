@@ -1,7 +1,6 @@
-/* Set the margin and padding of the container element */
-.container {
-  margin: 0 auto;
-  padding: 1px;
+body,html {
+  height: 100%;
+  background: linear-gradient(to bottom, #beb4be, #060c0c);
 }
 
 /* Create a flex container for the array elements and set the margin */
@@ -37,4 +36,12 @@ button {
 /* Style the button on hover */
 button:hover {
   background-color: navy;
+}
+
+.array-element.active {
+  background-color: #eca79e;
+}
+
+.sorted {
+  background-color: #68d579; /* Green color */
 }

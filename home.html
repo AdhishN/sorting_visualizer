@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="home.css"> <!--CSS file imported-->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,23 +9,25 @@
     <title>Sorting Algorithm Visualizer</title>
 </head>
 <body>
-	<div class="container">
-		<h1>Sorting Visualizer</h1>
+	<div class="container-fluid">
+		<h1 class="text-center mb-4">Sorting Visualizer</h1>
 		<div class="array-container">
 			<!-- Array elements will be added here dynamically -->
 		</div>
-        <label for="array-size-input">Array size:</label>
-        <input type="number" id="array-size-btn" value="50" min="1" max="200">
-        <!--All the different action buttons-->
-		<button id="generate-array-btn">Generate New Array</button>
-		<button id="bubble-sort-btn">Bubble Sort</button>
-		<button id="selection-sort-btn">Selection Sort</button>
-		<button id="insertion-sort-btn">Insertion Sort</button>
-		<button id="merge-sort-btn">Merge Sort</button>
-		<button id="quick-sort-btn">Quick Sort</button>
-        <button id="stop-button">STOP</button>
+		<div class="d-flex justify-content-center align-items-center mb-4">
+			<label class="me-2" for="array-size-input">Array size:</label>
+			<input type="number" id="array-size-btn" class="form-control me-2" value="50" min="1" max="200">
+			<button id="generate-array-btn" class="btn btn-primary me-2">Generate New Array</button>
+			<button id="bubble-sort-btn" class="btn btn-primary me-2">Bubble Sort</button>
+			<button id="selection-sort-btn" class="btn btn-primary me-2">Selection Sort</button>
+			<button id="insertion-sort-btn" class="btn btn-primary me-2">Insertion Sort</button>
+			<button id="merge-sort-btn" class="btn btn-primary me-2">Merge Sort</button>
+			<button id="quick-sort-btn" class="btn btn-primary me-2">Quick Sort</button>
+			<button id="stop-button" class="btn btn-danger me-2">STOP</button>
+		</div>
 	</div>
-	<script src="home.js"></script>   <!--JS file imported-->
-    <script src="./sorts/bubble_sort.js"></script>
+	<script src="home.js"></script>
+	<script src="./sorts/bubble_sort.js"></script>
 </body>
+
 </html>
