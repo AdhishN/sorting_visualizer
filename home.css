@@ -1,8 +1,9 @@
-body,html {
+/* Set the background gradient for the page */
+body, html {
   height: 100%;
-  background: linear-gradient(to bottom, #beb4be, #060c0c);
-}
+  background: linear-gradient(to bottom, #f0f2f0, #000c40);
 
+}
 /* Create a flex container for the array elements and set the margin */
 .array-container {
   display: flex;
@@ -11,7 +12,6 @@ body,html {
 
 /* Style each individual array element */
 .array-element {
-  color: rgb(0, 0, 0);
   padding: 1px;
   margin: 2px;
   flex: 1;
@@ -20,6 +20,7 @@ body,html {
   justify-content: center;
   position: relative;
   white-space: nowrap;
+  background-color: rgb(86, 86, 233);
 }
 
 /* Style the buttons */
@@ -38,10 +39,12 @@ button:hover {
   background-color: navy;
 }
 
+/* Style the active array element */
 .array-element.active {
   background-color: #eca79e;
 }
 
+/* Style the sorted array element */
 .sorted {
-  background-color: #68d579; /* Green color */
+  background-color: #68d579;
 }

@@ -23,14 +23,24 @@ const generateArray = () => {
         arrayContainer.appendChild(arrayElement);
       });
 };
-
 generateArrayBtn.addEventListener('click', generateArray);
 
-bubbleSortBtn.addEventListener('click', async () => {
-    isSorting=true; // can continue even after stopped
+const bubbleSortHandler = async () => {
+    isSorting = true; // can continue even after stopped
     const arrayElements = document.querySelectorAll('.array-element');
-    bubbleSort(arrayElements); //calls the bubbleSort function in the sorts folder
-  });
+    await bubbleSort(arrayElements); //calls the bubbleSort function in the sorts folder
+}
+bubbleSortBtn.addEventListener('click', bubbleSortHandler);
+
+
+const mergeSortHandler = async () => {
+    isSorting = true;
+    const arrayElements = document.querySelectorAll('.array-element');
+    const array = Array.from(arrayElements, (el) => parseInt(el.style.height));
+    await mergeSort(array, 0, array.length - 1, arrayElements);
+};
+mergeSortBtn.addEventListener('click', mergeSortHandler);
+  
 
 selectionSortBtn.addEventListener('click', () => {
 	// TODO 
@@ -38,10 +48,6 @@ selectionSortBtn.addEventListener('click', () => {
 
 insertionSortBtn.addEventListener('click', () => {
 	// TODO 
-});
-
-mergeSortBtn.addEventListener('click', () => {
-	// TODO
 });
 
 quickSortBtn.addEventListener('click', () => {
