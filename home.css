@@ -1,8 +1,7 @@
 /* Set the background gradient for the page */
 body, html {
   height: 100%;
-  background: linear-gradient(to bottom, #f0f2f0, #000c40);
-
+  background: linear-gradient(to bottom, #3e8f96,#292929);
 }
 /* Create a flex container for the array elements and set the margin */
 .array-container {
