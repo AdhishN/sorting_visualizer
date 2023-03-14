@@ -2,6 +2,8 @@ const bubbleSort = async (arrayElements) => {
 
   const n = arrayElements.length;
 
+  // Start the timer
+  const startTime = Date.now();
   // Outer loop to iterate through all elements
   for (let i = 0; i < n - 1 && isSorting; i++) {
     // Inner loop to compare adjacent elements
@@ -34,6 +36,16 @@ const bubbleSort = async (arrayElements) => {
   if (isSorting){
     arrayElements[0].classList.add('sorted'); // Add sorted class to the first element in the sorted array
   }
+  // End the timer
+  const endTime = Date.now();
+
+  // Calculate the time taken to sort the array
+  const totalTime = endTime - startTime;
+
+  // Display the time taken to sort the array
+  const timerElement = document.createElement('div');
+  timerElement.textContent = `Time taken: ${totalTime} milliseconds`;
+  document.body.appendChild(timerElement);
 };
 
 /* Note: isSorting is a global variable that is set to false when the sorting stops.
