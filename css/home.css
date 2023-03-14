@@ -52,4 +52,15 @@ button:hover {
   background-color: #68d579;
 }
 
+.dropdown-item{
+  color: #e2b714;
+}
 
+.dropdown-menu.show {
+  background-color: #7c8087;
+}
+
+.dropdown-item:hover {
+  color: black;
+  background-color: #e2b714;
+}

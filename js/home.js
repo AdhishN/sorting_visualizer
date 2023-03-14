@@ -48,3 +48,6 @@ const stopSortingBtn = document.getElementById('stop-button');
 stopSortingBtn.addEventListener('click', ()=>{
     isSorting = false; // stops the sorting on click of stop
 })
+
+
+

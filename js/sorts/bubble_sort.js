@@ -1,4 +1,5 @@
 const bubbleSort = async (arrayElements) => {
+
   const n = arrayElements.length;
 
   // Outer loop to iterate through all elements
