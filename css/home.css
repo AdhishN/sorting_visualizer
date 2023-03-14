@@ -6,7 +6,6 @@ body, html {
   color: #e2b714;
 }
 
-
 /* Create a flex container for the array elements and set the margin */
 .array-container {
   display: flex;

@@ -8,23 +8,13 @@ const quickSortBtn = document.querySelector('#quick-sort-btn');
 
 let isSorting = false; // for STOP button 
 
-const generateArray = () => {
-    // Get the array size from the input field
-    const arraySize = Number(document.getElementById('array-size-btn').value);
-	// Generate an array of random numbers between 1 and 100
-	const array = Array.from({ length: arraySize}, () => Math.floor(Math.random() * 150) + 1);
-	// Clear the previous array
-	arrayContainer.innerHTML = '';
-	// Add array elements to the container
-    array.forEach((value) => {
-        const arrayElement = document.createElement('div');
-        arrayElement.classList.add('array-element');
-        arrayElement.style.height = `${value * 4}px`;
-        arrayContainer.appendChild(arrayElement);
-      });
-};
-generateArrayBtn.addEventListener('click', generateArray);
+// CALLS GENERATE ARRAY FILE
+const generateArrayHandler = () =>{
+    generateArray(arrayContainer); // calls the generate_array function
+}
+generateArrayBtn.addEventListener('click', generateArrayHandler);
 
+// CALLS BUBBLE SORT FILE
 const bubbleSortHandler = async () => {
     isSorting = true; // can continue even after stopped
     const arrayElements = document.querySelectorAll('.array-element');
@@ -32,16 +22,16 @@ const bubbleSortHandler = async () => {
 }
 bubbleSortBtn.addEventListener('click', bubbleSortHandler);
 
-
+// CALLS MERGE SORT FILE
 const mergeSortHandler = async () => {
     isSorting = true;
     const arrayElements = document.querySelectorAll('.array-element');
-    const array = Array.from(arrayElements, (el) => parseInt(el.style.height));
+    const array = Array.from(arrayElements, (el) => parseInt(el.style.height)); // Convert the heights of the elements to an array of numbers
     await mergeSort(array, 0, array.length - 1, arrayElements);
 };
 mergeSortBtn.addEventListener('click', mergeSortHandler);
   
-
+// CALLS SELECTION SORT FILE
 selectionSortBtn.addEventListener('click', () => {
 	// TODO 
 });
