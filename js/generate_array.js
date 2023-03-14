@@ -9,6 +9,13 @@ const generateArray = (arrayContainer) => {
     array.forEach((value) => {
         const arrayElement = document.createElement('div');
         arrayElement.classList.add('array-element');
+        // Removes borders from the elements if the number of elements are more than 400
+        if (arraySize > 500) {
+            arrayElement.classList.add('small-bars');
+        }
+        else {
+            arrayElement.classList.remove('small-bars');
+        }
         arrayElement.style.height = `${value * 4}px`;
         arrayContainer.appendChild(arrayElement);
       });

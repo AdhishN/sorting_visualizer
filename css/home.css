@@ -14,8 +14,8 @@ body, html {
 
 /* Style each individual array element */
 .array-element {
-  padding: 1px;
-  margin: 2px;
+  /* padding: 1px; */
+  /* margin: 2px; */
   flex: 1;
   border: 1px solid black;
   display: flex;
@@ -52,15 +52,23 @@ button:hover {
   background-color: #68d579;
 }
 
+/* color of the text in the drop down */
 .dropdown-item{
   color: #e2b714;
 }
 
+/* background color of the drop down area */
 .dropdown-menu.show {
   background-color: #7c8087;
 }
 
+/* on hover effect on the drop down elements */
 .dropdown-item:hover {
   color: black;
   background-color: #e2b714;
+}
+
+/* no borders if no of elemets are greater than 400 */
+.small-bars {
+  border: none;
 }

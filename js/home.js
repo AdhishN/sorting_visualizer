@@ -31,18 +31,18 @@ const mergeSortHandler = async () => {
 };
 mergeSortBtn.addEventListener('click', mergeSortHandler);
   
-// CALLS SELECTION SORT FILE
-selectionSortBtn.addEventListener('click', () => {
-	// TODO 
-});
+// // CALLS SELECTION SORT FILE
+// selectionSortBtn.addEventListener('click', () => {
+// 	// TODO 
+// });
 
-insertionSortBtn.addEventListener('click', () => {
-	// TODO 
-});
+// insertionSortBtn.addEventListener('click', () => {
+// 	// TODO 
+// });
 
-quickSortBtn.addEventListener('click', () => {
-	// TODO
-});
+// quickSortBtn.addEventListener('click', () => {
+// 	// TODO
+// });
 
 const stopSortingBtn = document.getElementById('stop-button');
 stopSortingBtn.addEventListener('click', ()=>{
