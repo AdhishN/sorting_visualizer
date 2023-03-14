@@ -19,7 +19,7 @@ const merge = async (array, start, middle, end, arrayElements) => {
         currentElement2.classList.add('active');
 
         // Wait for a short period to show the comparison
-        await new Promise((resolve) => setTimeout(resolve, 10));
+        await new Promise((resolve) => setTimeout(resolve, 5));
 
         // Determine which element is smaller and put it into the result array
         if (leftArray[i] <= rightArray[j]) {
@@ -50,7 +50,7 @@ const merge = async (array, start, middle, end, arrayElements) => {
         arrayElements[start + i].classList.add('active');
         
         // Wait for a short period to show the element being added to the result array
-        await new Promise((resolve) => setTimeout(resolve, 10));
+        await new Promise((resolve) => setTimeout(resolve, 5));
         
         // Remove the highlighting from the element
         arrayElements[start + i].classList.remove('active');
@@ -66,7 +66,7 @@ const merge = async (array, start, middle, end, arrayElements) => {
         arrayElements[middle + 1 + j].classList.add('active');
 
         // Wait for a short period to show the element being added to the result array
-        await new Promise((resolve) => setTimeout(resolve, 10));
+        await new Promise((resolve) => setTimeout(resolve, 5));
 
         // Remove the highlighting from the element
         arrayElements[middle + 1 + j].classList.remove('active');

@@ -13,7 +13,7 @@ const bubbleSort = async (arrayElements) => {
       nextElement.classList.add('active');
 
       // Wait for a short period to show the comparison
-      await new Promise((resolve) => setTimeout(resolve, 1));
+      await new Promise((resolve) => setTimeout(resolve, 5));
 
       // Get the heights of the two elements being compared
       const currentValue = parseInt(currentElement.style.height);
