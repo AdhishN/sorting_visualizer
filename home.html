@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="home.css"> <!--CSS file imported-->
+    <link rel="stylesheet" href="css/home.css"> <!--CSS file imported-->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,25 +11,24 @@
 <body>
 	<div class="container-fluid">
 		<h1>Sorting Visualizer</h1>
-
 		<div class="d-flex justify-content-center align-items-center mb-4">
-			<label class="me-2" for="array-size-input">Array size:</label>
+			<label style="color: #e2b714;" class="me-2" for="array-size-input">Array size:</label>
 			<input type="number" id="array-size-btn" class="form-control me-2" value="50" min="1" max="200">
-			<button id="generate-array-btn" class="btn btn-primary me-2">Generate New Array</button>
-			<button id="bubble-sort-btn" class="btn btn-primary me-2">Bubble Sort</button>
-			<button id="selection-sort-btn" class="btn btn-primary me-2">Selection Sort</button>
-			<button id="insertion-sort-btn" class="btn btn-primary me-2">Insertion Sort</button>
-			<button id="merge-sort-btn" class="btn btn-primary me-2">Merge Sort</button>
-			<button id="quick-sort-btn" class="btn btn-primary me-2">Quick Sort</button>
+			<button id="generate-array-btn" class="btn">Generate New Array</button>
+			<button id="bubble-sort-btn" class="btn">Bubble Sort</button>
+			<button id="selection-sort-btn" class="btn">Selection Sort</button>
+			<button id="insertion-sort-btn" class="btn">Insertion Sort</button>
+			<button id="merge-sort-btn" class="btn">Merge Sort</button>
+			<button id="quick-sort-btn" class="btn">Quick Sort</button>
 			<button id="stop-button" class="btn btn-danger me-2">STOP</button>
 		</div>
 		<div class="array-container">
 			<!-- Array elements will be added here dynamically -->
 		</div>
 	</div>
-	<script src="home.js"></script>
-	<script src="./sorts/bubble_sort.js"></script>
-	<script src="./sorts/merge_sort.js"></script>
+	<script src="./js/home.js"></script>
+	<script src="./js/sorts/bubble_sort.js"></script>
+	<script src="./js/sorts/merge_sort.js"></script>
 </body>
 
 </html>
